@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+        {% block user_head %}
+             {% include "components/unauthorized_block.html" %}
+        {% endblock %}
+
+        {% block title %}
+        <!--- category preaheader" -->
+        <div class = "row-1 m-5 d-flex gap-3 align-items-left">
+            <h2> Registration </h2>
+        </div>
+        {% endblock %}
+
+
+
+        {% block content %}
+               <!--register form -->
+                <form enctype="multipart/form-data" method = "post" class="col-7 mb-3 mx-5">
+
+
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+
+
+                     <div class="mb-3 row">
+                        <div class="col-sm-3">&nbsp;</div>
+                        <div class="col-sm-9">
+                          <button id = btnRegister class = "btn btn-outline-success my_color_div" type="submit" >Register!</button>
+                        </div>
+                     </div>
+
+
+                </form>
+        {% endblock %}
+
+

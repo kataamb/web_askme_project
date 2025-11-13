@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AskAmbartsumova</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css" />
+</head>
+
+<body class = "">
+
+    <nav class="navbar bg-body-tertiary ">
+        <div class="container-fluid me-5">
+            <a class="navbar-brand" href = "./index.html">AskAmbartsumova</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my_color_div" type="submit">ASK!</button>
+            </form>
+
+            <div class="d-flex justify-content-between gap-3">
+                <div class="border">
+                    <img src="../static/img/avatar.png" width="50" height="50" />
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                    <div>Dr. Pepper</div>
+                    <div>
+                        <a href="./settings.html">Settings</a>
+                        <a href="./logout.html">Log out</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="container-fluid">
+
+        <!--- category preaheader" -->
+        <div class = "row-1 m-5 d-flex gap-3 align-items-left">
+            <h2> Settings: </h2>
+            <h2> Dr. Pepper </h2>
+        </div>
+
+
+        <!--- middle main part -->
+        <div class = "row all-height me-5 float-left">
+
+
+           <div class="col-10">
+
+
+
+                <!--error field -->
+
+                <!--settings form -->
+                <form class="col-7 mb-3 mx-5">
+
+                     <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Login</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" aria-describedby="emailHelp" maxlength="50" placeholder="dr_pepper" id="loginSettings">
+                        </div>
+                     </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" aria-describedby="emailHelp" maxlength="50" placeholder="dr.pepper@mail.ru" id="emailSettings">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">NickName</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" aria-describedby="emailHelp" maxlength="50" placeholder="Dr. Pepper" id="nicknameSettings">
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <label class="col-sm-3 col-form-label">Upload avatar</label>
+                        </div>
+                        <div class = "col-4">
+                             <div class="border">
+                                <img src="../static/img/avatar.png" class = "img-max"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class = "mb-3 row">
+                        <div class="col-sm-3">&nbsp;</div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="file" id="formFileSettings">
+                        </div>
+                    </div>
+
+
+                     <div class="mb-3 row">
+                        <div class="col-sm-3">&nbsp;</div>
+                        <div class="col-sm-9">
+                          <button id = btnSettings class = "btn btn-outline-success my_color_div" type="submit" >Save</button>
+                        </div>
+                     </div>
+
+
+                </form>
+
+
+
+            </div>
+
+
+            <div class="col">
+                <h3>Popular Tags</h3>
+                <div class="row">
+                    <div class="col">
+                        <a href="./tag.html"><span class="badge text-primary">perl</span></a>
+                        <a href="./tag.html"><span class="badge text-secondary">python</span></a>
+                        <a href="./tag.html"><span class="badge text-dark">Technopark</span></a>
+                        <a href="./tag.html"><span class="badge text-danger">MySQL</span></a>
+                        <a href="./tag.html"><span class="badge text-warning">django</span></a>
+                        <a href="./tag.html"><span class="badge text-info">Mail.Ru</span></a>
+                        <a href="./tag.html"><span class="badge text-success">Voloshin</span></a>
+                        <a href="./tag.html"><span class="badge text-dark">Firefox</span></a>
+
+                    </div>
+                </div>
+                <h3 class="mt-5">Best Members</h3>
+
+
+                <div>
+                    <a href="/member.html" class="d-block">Mr. Freeman</a>
+                    <a href="/member.html" class="d-block">Dr. House</a>
+                    <a href="/member.html" class="d-block">Bender</a>
+                    <a href="/member.html" class="d-block">Queen Victoria</a>
+                    <a href="/member.html" class="d-block">V. Pupkin</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </main>
+
+    <footer class="fixed-bottom p-3 bg-light">
+      <div class="container">
+        <span class="text-muted"> </span>
+      </div>
+    </footer>
+
+
+</body>
+</html>

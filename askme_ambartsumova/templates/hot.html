@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+        {% block user_head %}
+            {% if user.is_authenticated %}
+                {% include "components/authorized_block.html" with user=user profile=profile %}
+            {% else %}
+                {% include "components/unauthorized_block.html" %}
+            {% endif %}
+        {% endblock %}
+
+        {% block title %}
+        <!--- category preaheader" -->
+        <div class = "row-1 m-3 d-flex gap-3 align-items-left">
+            <h2 class = " align-text-bottom"> <a href="/">New Questions</a>  </h2>
+            <h2 class = " align-text-bottom">  Hot Questions </h2>
+        </div>
+        {% endblock %}
+
+
+
+        {% block content %}
+
+                <div class = "col-8 mb-3 mx-3">
+                    {% for question in questions %}
+                        {% include "components/question_article.html" with item=question %}
+                    {% endfor %}
+
+                </div>
+
+        {% endblock %}
+
+
+        {% block pagination %}
+            {% include "components/pagination.html" with page_obj=questions page_content='hot'%}
+        {% endblock %}

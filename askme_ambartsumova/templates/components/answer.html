@@ -1,0 +1,20 @@
+{% load static %}
+{% load bootstrap4 %}
+
+
+
+<form method = "post">
+    <div class="form-group my-5 row">
+
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        <div class="my-3 row">
+            <div class="col-sm-10 ">
+              <button class="btn btn-outline-success my_color_div" type="submit">Answer!</button>
+            </div>
+         </div>
+
+    </div>
+</form>

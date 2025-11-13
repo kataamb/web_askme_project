@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<article class="card mb-3 w-100 float-left">
+    <div class="row g-0">
+      <div class="col-3 p-2">
+        <div class="border w-100 mb-3" style="height: 100px">
+          <img
+            src="{{ item.user.avatar.url }}"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="input-group flex-nowrap">
+          <input type="number" value="{{ item.likes_count }}" class="form-control" />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{% url 'question' item.id %}">{{ item.title }}</a>
+          </h5>
+          <p class="card-text">
+              {{ item.text }}
+          </p>
+          <div class="row">
+            <a class="col-4" href="{% url 'question' item.id %}">answers</a>
+            <div class="col-8">
+              <span>Tags</span>
+                {% for tag in item.tags.all %}
+                    <a href="{% url 'tag' tag.name %}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+</article>

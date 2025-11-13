@@ -1,0 +1,97 @@
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AskAmbartsumova</title>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}" />
+</head>
+
+<body class = "">
+
+    <nav class="navbar bg-body-tertiary ">
+        <div class="container-fluid me-5">
+            <a class="navbar-brand" href = "/">AskAmbartsumova</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my_color_div" type="submit"> <a href="{% url 'ask' %}"> ASK!</a> </button>
+            </form>
+
+
+            <!--  -->
+            {% block user_head %}
+            {% endblock %}
+
+            <!-- -->
+
+        </div>
+    </nav>
+
+    <main class="container-fluid container-fluid container-lg mt-3">
+
+        <!--- category preaheader" -->
+        {% block title %}
+        {% endblock %}
+
+
+        <!--- middle main part -->
+        <div class = "row all-height me-5 float-left">
+            <div class="col-10">
+
+            <!--- -->
+                {% block content %}
+                {% endblock %}
+
+
+            </div>
+
+            <div class="col">
+                <h3>Popular Tags</h3>
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'tag' 'perl' %}"><span class="badge text-primary">perl</span></a>
+                        <a href="{% url 'tag' 'python' %}"><span class="badge text-secondary">python</span></a>
+                        <a href="{% url 'tag' 'Technopark' %}"><span class="badge text-dark">Technopark</span></a>
+                        <a href="{% url 'tag' 'MySQL' %}"><span class="badge text-danger">MySQL</span></a>
+                        <a href="{% url 'tag' 'django' %}"><span class="badge text-warning">django</span></a>
+                        <a href="{% url 'tag' 'Mail_Ru' %}"><span class="badge text-info">Mail_Ru</span></a>
+                        <a href="{% url 'tag' 'Voloshin' %}"><span class="badge text-success">Voloshin</span></a>
+                        <a href="{% url 'tag' 'Firefox' %}"><span class="badge text-dark">Firefox</span></a>
+
+                    </div>
+                </div>
+                <h3 class="mt-5">Best Members</h3>
+
+
+                <div>
+                    <a href="#" class="d-block">Mr. Freeman</a>
+                    <a href="#" class="d-block">Dr. House</a>
+                    <a href="#" class="d-block">Bender</a>
+                    <a href="#" class="d-block">Queen Victoria</a>
+                    <a href="#" class="d-block">V. Pupkin</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--pagination -->
+        {% block pagination %}
+        {% endblock %}
+
+
+    </main>
+
+    <footer class=" fixed-bottom p-3 bg-light">
+      <div class="container">
+        <span class="text-muted"></span>
+      </div>
+    </footer>
+
+
+</body>
+</html>

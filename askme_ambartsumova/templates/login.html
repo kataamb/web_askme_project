@@ -1,0 +1,41 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% load bootstrap4 %}
+
+    {% block user_head %}
+        {% include "components/unauthorized_block.html" %}
+    {% endblock %}
+
+    {% block title %}
+        <h2> Log in </h2>
+    {% endblock %}
+
+
+    {% block content %}
+         <form method="post" action="" class="col-7 mb-3 mx-5">
+
+
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+
+
+             <div class="mb-3 row">
+                <div class="col-sm-2">&nbsp;</div>
+                <div class="col-sm-10">
+                  <button id = btnLogIn class = "btn btn-outline-success my_color_div" type="submit" >Log in!</button>
+                </div>
+             </div>
+
+             <div class="mb-3 row">
+                <div class="col-sm-2">&nbsp;</div>
+                <div class="col-sm-10">
+                  <a href="{% url 'register' %}">create new account</a>
+                </div>
+             </div>
+
+
+         </form>
+    {% endblock %}
+

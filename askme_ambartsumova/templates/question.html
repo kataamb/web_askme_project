@@ -1,0 +1,78 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+        {% block user_head %}
+            {% if user.is_authenticated %}
+                {% include "components/authorized_block.html" with user=user profile=profile %}
+            {% else %}
+                {% include "components/unauthorized_block.html" %}
+            {% endif %}
+        {% endblock %}
+
+
+
+
+        {% block content %}
+            <!--- middle main part -->
+
+            <div class = "col-8 mb-3 mx-3">
+
+
+                <article class="row card border-0 mb-3 w-100 float-left">
+                    <div class="row g-0">
+
+
+                      <div class="col-3 p-2">
+                        <div class="border w-100 mb-3" style="height: 100px">
+                          <img
+                            src="{{ question.user.avatar.url }}"
+                            class="img-fluid rounded-start"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="input-group flex-nowrap">
+                          <input type="number" value="{{ question.likes_count }}" class="form-control" />
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="card-body">
+                          <h5 class="card-title">
+                              {{ question.title }}
+                          </h5>
+                          <p class="card-text">
+                            {{ question.text_body }}
+                          </p>
+
+                          <div class="row">
+                            <div class="col-8">
+                              <span>Tags</span>
+                                {% for tag in question.tags.all %}
+                                    <a href="{% url 'tag' tag.name %}">{{ tag.name }}</a>
+                                {% endfor %}
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                </article>
+
+
+                {% include "components/other_answers_list.html" with question=question answers=answers %}
+
+                {% include "components/answer.html" %}
+
+
+            </div>
+
+
+
+        {% endblock %}
+
+
+
+
+
+

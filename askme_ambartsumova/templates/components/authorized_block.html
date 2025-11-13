@@ -1,0 +1,14 @@
+{% load static %}
+
+    <div class="d-flex justify-content-between gap-3">
+                <div class="border">
+                    <img src="{{ profile.avatar.url }}" width="50" height="50" />
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                    <div> {{ profile.login }} </div>
+                    <div>
+                        <a href="{% url 'settings' %}">Settings</a>
+                        <a href="{% url 'logout' %}">Log out</a>
+                    </div>
+                </div>
+    </div>

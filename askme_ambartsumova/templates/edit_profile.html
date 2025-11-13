@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+        {% block user_head %}
+             {% include "components/authorized_block.html" with user=user profile=profile %}
+        {% endblock %}
+
+        {% block title %}
+       <!--- category preaheader" -->
+        <div class = "row-1 m-5 d-flex gap-3 align-items-left">
+            <h2> Settings: </h2>
+            <h2> {{user.username}} </h2>
+        </div>
+        {% endblock %}
+
+
+
+        {% block content %}
+        <!--settings form -->
+            <form enctype="multipart/form-data" method = "post" class="col-7 mb-3 mx-5">
+
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+
+
+
+
+                     <div class="mb-3 row">
+                        <div class="col-sm-3">&nbsp;</div>
+                        <div class="col-sm-9">
+                          <button id = btnSettings class = "btn btn-outline-success my_color_div" type="submit" >Save</button>
+                        </div>
+                     </div>
+
+
+                </form>
+        {% endblock %}

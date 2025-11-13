@@ -1,0 +1,11 @@
+services:
+  postgre_db:
+    image: postgres:latest
+    ports: 
+      - "5439:5432"
+    environment:
+      POSTGRES_DB: askme_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+    volumes: 
+      - ./volumes_data_askme:/var/lib/postgresql

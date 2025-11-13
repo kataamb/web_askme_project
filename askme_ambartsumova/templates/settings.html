@@ -1,0 +1,75 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+        {% block user_head %}
+             {% include "components/authorized_block.html" with user=user profile=profile %}
+        {% endblock %}
+
+        {% block title %}
+       <!--- category preaheader" -->
+        <div class = "row-1 m-5 d-flex gap-3 align-items-left">
+            <h2> Settings: </h2>
+            <h2> {{user.username}} </h2>
+        </div>
+        {% endblock %}
+
+
+
+        {% block content %}
+        <!--settings form -->
+            <form class="col-7 mb-3 mx-5">
+
+                     <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Login</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" aria-describedby="emailHelp" maxlength="50" placeholder="{{profile.login}}" id="loginSettings">
+                        </div>
+                     </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" aria-describedby="emailHelp" maxlength="50" placeholder="{{user.email}}" id="emailSettings">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">NickName</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" aria-describedby="emailHelp" maxlength="50" placeholder="{{user.first_name}}" id="nicknameSettings">
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <label class="col-sm-3 col-form-label">Upload avatar</label>
+                        </div>
+                        <div class = "col-4">
+                             <div class="border">
+                                <img src="{{ profile.avatar.url }}" class = "img-max"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class = "mb-3 row">
+                        <div class="col-sm-3">&nbsp;</div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="file" id="formFileSettings">
+                        </div>
+                    </div>
+
+
+                     <div class="mb-3 row">
+                        <div class="col-sm-3">&nbsp;</div>
+                        <div class="col-sm-9">
+                          <a href="{% url 'edit_profile' %}">Edit</a>
+                        </div>
+                     </div>
+
+
+                </form>
+        {% endblock %}
